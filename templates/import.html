@@ -4,20 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Brain Tumor Classification Using Deep Learning</title>
+    <title>Brainit | Brain Tumor Classification</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;1,300&display=swap" rel="stylesheet">
     <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
     <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
     <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
-    <link href="{{ url_for('static', filename='css/test.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet">
     <script src="{{ url_for('static', filename='js/newjs.js') }}" type="text/javascript"></script>
 </head>
 
 <body>
-    <nav class="navbar navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand" href="#"><img src="{{ url_for('static', filename='js/newjs.js') }}">Brain Tumor Classification Using Deep Learning</a>
-        </div>
-    </nav>
+    <div class="container">
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#"><img src="{{ url_for('static', filename='images/Brainit.png') }} " width="180px"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                  <p style="padding:10px; font-family: 'Lato'; font-weight: 500;">Hi <span style="color:#5A86C9 ;">{{session.username}}</span></p>
+                </li>
+                <li class="nav-item">
+                  <a  href="{{ url_for('logout') }}" class="btn " style="width: 100px; background-color: #5A86C9; text-decoration: none;color: white;">Logout</a>
+                </li>
+              </ul>
+            </div>
+        </nav>
+    </div>
 
     {% block content %}
     {% endblock %}
